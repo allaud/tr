@@ -1,0 +1,9 @@
+A few days ago Google closed their Translate API. This is a translation script written on pure Python and using Bing API.
+
+Usage:
+
+> tr milk
+молоко
+
+> tr порно ru en
+porn
