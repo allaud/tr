@@ -1,5 +1,14 @@
 A few days ago Google closed their Translate API. This is a translation script written on pure Python and using Bing API.
 
+How to run:
+
+> ./tr <word-to-translate>
+
+OR (preferred)
+
+> cp tr ~/bin/tr
+chmod +x ~/bin/tr
+
 Usage:
 
 > tr milk
