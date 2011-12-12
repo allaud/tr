@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+import sys
+from json import loads
+from urllib import urlopen
+
+
+API_ID = 'YOUR_API_KEY'
+
+try:
+    FROM, TO = sys.argv[2], sys.argv[3]
+except IndexError:
+    FROM, TO = 'en', 'ru'
+
+response = urlopen('''http://api.bing.net/json.aspx?\
+AppId=%s&Query=%s&Sources=Translation&Version=2.2\
+&Translation.SourceLanguage=%s&\
+Translation.TargetLanguage=%s''' % (API_ID, sys.argv[1], FROM, TO, )).read()
+json = loads(response)
+
+try:
+    print json['SearchResponse']['Translation']['Results'][0]['TranslatedTerm']
+except KeyError:
+    print 'No translate :('
